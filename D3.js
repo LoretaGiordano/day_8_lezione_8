@@ -104,7 +104,7 @@ const starWarsCharacters = [
 /* ESERCIZIO 1
   Crea una variabile chiamata "charactersNames" e assegnale un array vuoto
 */
-let charactersNames = []
+const charactersNames = []
 
 /* ESERCIZIO 2
   Utilizzando un ciclo for, cicla l'array "starWarsCharacters".
@@ -118,11 +118,10 @@ console.log('i nomi sono ', charactersNames)
 
 /* ESERCIZIO 3
 Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.*/
-// let femaleCharacters = []
-// for (let i = 0; i < starWarsCharacters.length; i++) {
-//   femaleCharacters.push(starWarsCharacters[i])
-// }
-// console.log(femaleCharacters)
+const femaleCharacters = []
+femaleCharacters.push(starWarsCharacters[4])
+femaleCharacters.push(starWarsCharacters[6])
+console.log('le donne sono ', femaleCharacters)
 
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
@@ -143,27 +142,36 @@ const eyeColor = [
   occhi precedentemente creati. Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua 
   proprietà "eye_color").
 */
-//const justTheLastSkills = []
-
-// for (let i = 0; i < animalsArray.length; i++) {
-//   // per prendere l'ULTIMO elemento di un array, ricordiamoci che possiamo utilizzare
-//   // la length... length-1 è sempre l'ULTIMO INDICE VALIDO di quell'array
-//   justTheLastSkills.push(
-//     animalsArray[i].skills[animalsArray[i].skills.length - 1]
-//   )
-// }
-
-switch (starWarsCharacters[charactersNames.eye_color]) {
-  case 'blue':
-    eyeColor.blue.push()
-    break
-  default:
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  switch (starWarsCharacters[i].eye_color) {
+    case 'blue':
+      eyeColor.blue.push(starWarsCharacters[i])
+      break
+    case 'yellow':
+      eyeColor.yellow.push(starWarsCharacters[i])
+      break
+    case 'brown':
+      eyeColor.brown.push(starWarsCharacters[i])
+      break
+    case 'red':
+      eyeColor.red.push(starWarsCharacters[i])
+      break
+    case 'blue-gray':
+      eyeColor.blue_gray.push(starWarsCharacters[i])
+      break
+  }
 }
 console.log(eyeColor)
+
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
-
+let crewMass = 0
+let i = 0
+while (i < starWarsCharacters.length) {
+  crewMass = crewMass + starWarsCharacters[i].mass
+}
+console.log(crewMass)
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi 
   dell'array "starWarsCharacters".
