@@ -145,7 +145,7 @@ const eyeColor = [
 for (let i = 0; i < starWarsCharacters.length; i++) {
   switch (starWarsCharacters[i].eye_color) {
     case 'blue':
-      eyeColor.blue.push(starWarsCharacters[i])
+      eyeColor.blue.push(starWarsCharacters[i].eye_color)
       break
     case 'yellow':
       eyeColor.yellow.push(starWarsCharacters[i])
